@@ -1,0 +1,60 @@
+.container {
+    margin: 2rem;
+  }
+  form {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .add {
+    background-color: #064545;
+    color: white;
+  }
+  input[type="text"], input[type="date"] {
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+  button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 0.5rem;
+    text-align: left;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  th {
+    background-color: #a45555;
+    color: white;
+    
+    font-size: large;
+  }
+  td {
+    background-color: white;
+    font-weight: bold;
+  }
+  .edit {
+    background-color: green;
+    color: white;
+  }
+  .delete {
+    background-color: red;
+    color: white;
+  }
+  h1 {
+    color: rgb(2, 48, 33);
+  }
+.update {
+  background-color: green;
+  color: white;
+}
+.cancel {
+  background-color: red;
+    color: white;
+}

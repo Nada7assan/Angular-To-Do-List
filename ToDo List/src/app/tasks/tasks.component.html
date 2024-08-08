@@ -1,0 +1,46 @@
+<div class="container">
+    <h1>New Task</h1>
+
+    <form (ngSubmit)="addTask()">
+        <input type="text" placeholder="Task" [(ngModel)]="newTask.name" name="taskName" required>
+        <input type="date" name="TDate" [(ngModel)]="newTask.date" required>
+        <button type="submit" class="add">Add Task</button>
+    </form>
+ 
+    
+@if (editMode) 
+{
+    <h1>Update Task</h1>
+    <form (ngSubmit)="updateTask()"> 
+        <input type="text" placeholder="Task" [(ngModel)]="newTask.name" name="taskName" required>
+        <input type="date" [(ngModel)]="newTask.date" name="targetDate" required>
+        <button type="submit" class="update">Update Task</button>
+        <button type="button" (click)="cancelEdit()" class="cancel">Cancel</button>
+      </form>
+     }
+     <h1>TO-DO Tasks</h1>  
+    <table>
+        <thead>
+            <tr>
+                <th>Task</th>
+                <th>Target Date</th>
+                <th>Done</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (task of tasks; track task)
+            {
+            <tr>
+               
+                <td>{{task.name}}</td>
+                <td>{{ task.date | customDate }}</td>
+                <td><input type="checkbox" [(ngModel)]="task.done"></td>
+                <td><button (click)="editTask(task)" class="edit">Edit</button></td>
+                <td><button (click)="deleteTask(task)" class="delete">Delete</button></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
